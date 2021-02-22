@@ -26,7 +26,7 @@ jobs:
 
     - name: Build de imagem e Push no Docker Hub
       run: |
-        cd ./SiteEstaticoCotacoes
+        cd ./WorkerCargaCotacoes
         docker build . --file Dockerfile --tag ${{ env.IMAGEM_DOCKERHUB }}:latest
         docker tag ${{ env.IMAGEM_DOCKERHUB }}:latest ${{ env.IMAGEM_DOCKERHUB }}:$GITHUB_RUN_NUMBER
         docker push --all-tags ${{ env.IMAGEM_DOCKERHUB }}
